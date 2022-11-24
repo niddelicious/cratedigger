@@ -23,10 +23,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Set directory
+      - name: Set directory
+        run: |
+          cd /var/www/nidde.nu/niddelicious
+
       # Compile JS and CSS
       - name: Compile JS and CSS
-        run: npm run prod
+        run: |
+          npm run prod
 
       # Clear cache
       - name: Clear cache
-        run: php artisan cache:clear
+        run: |
+          php artisan cache:clear
