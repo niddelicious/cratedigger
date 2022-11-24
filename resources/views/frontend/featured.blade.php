@@ -12,7 +12,7 @@
         <div class="episodeInfo featured">Style / Genre:</div>
         <div class="style genre featured">{{ $featured->style }} / {{ $featured->genre }}</div>
         @if ($featured->twitchSafe == true)
-            <div><span class="tag twitch">Twitch-safe</span></div>
+            <div class="featured"><span class="tag twitch">Twitch-safe</span></div>
         @endif
     </div>
     <div class="buttons third">

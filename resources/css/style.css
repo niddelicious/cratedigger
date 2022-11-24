@@ -97,12 +97,6 @@ button {
     margin-top: 1rem;
 }
 
-
-.featured {
-    width: 256px;
-    border-radius: 1em;
-}
-
 .thumbnail {
     width: 128px;
     border-radius: .6em;
@@ -274,6 +268,11 @@ div.twitchSafeRibbon {
     font-weight: 120%;
 }
 
+.featured img {
+    width: 256px;
+    border-radius: 1em;
+}
+
 .tag {
     padding: .25em 1em;
     font-size: .5em;
@@ -318,6 +317,15 @@ div.twitchSafeRibbon {
 
     .episodeData {
         width: 100%;
+    }
+
+    .featured {
+        width: 100%;
+        text-align: center;
+    }
+
+    .featured img {
+        max-width: 320px;
     }
 }
 
