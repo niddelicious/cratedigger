@@ -1,5 +1,5 @@
 <div class="expanded">
-    <h2>Featured Episode</h2>
+    <h2>Featured episode</h2>
 </div>
 <div class="feature flex">
     <div class="image third">
