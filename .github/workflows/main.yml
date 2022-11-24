@@ -25,20 +25,18 @@ jobs:
 
       # Sanity check
       - name: Sanity check
+        working-directory: /var/www/nidde.nu/niddelicious
         run: |
           touch ./github-action-is-running.txt
 
-      # Set directory
-      - name: Set directory
-        run: |
-          cd /var/www/nidde.nu/niddelicious
-
       # Compile JS and CSS
       - name: Compile JS and CSS
+        working-directory: /var/www/nidde.nu/niddelicious
         run: |
           npm run prod
 
       # Clear cache
       - name: Clear cache
+        working-directory: /var/www/nidde.nu/niddelicious
         run: |
           php artisan cache:clear
