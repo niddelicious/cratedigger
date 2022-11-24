@@ -2,7 +2,7 @@
     <h2>Featured episode</h2>
 </div>
 <div class="feature flex">
-    <div class="image third">
+    <div class="image third featured">
         <img src="/images/{{ $featured->imageFilename }}.jpg" alt="Cover art for {{ $featured->title }}" />
     </div>
     <div class="episodeData third">
