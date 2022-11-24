@@ -23,6 +23,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Sanity check
+      - name: Sanity check
+        run: |
+          touch ./github-action-is-running.txt
+
       # Set directory
       - name: Set directory
         run: |
