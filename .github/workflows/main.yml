@@ -1,4 +1,8 @@
 # This is a basic workflow to help you get started with Actions
+defaults:
+  run:
+    shell: bash
+    working-directory: /var/www/nidde.nu/niddelicious
 
 name: Deploy to Raspberry Pi
 
@@ -25,18 +29,15 @@ jobs:
 
       # Sanity check
       - name: Sanity check
-        working-directory: /var/www/nidde.nu/niddelicious
         run: |
           touch ./github-action-is-running.txt
 
       # Compile JS and CSS
       - name: Compile JS and CSS
-        working-directory: /var/www/nidde.nu/niddelicious
         run: |
           npm run prod
 
       # Clear cache
       - name: Clear cache
-        working-directory: /var/www/nidde.nu/niddelicious
         run: |
           php artisan cache:clear
