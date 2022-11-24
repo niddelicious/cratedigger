@@ -269,7 +269,7 @@ div.twitchSafeRibbon {
 }
 
 .featured img {
-    width: 256px;
+    max-width: 256px;
     border-radius: 1em;
 }
 
