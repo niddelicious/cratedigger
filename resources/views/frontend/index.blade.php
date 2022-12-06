@@ -1,11 +1,11 @@
 @extends('frontend.layout')
 
 @section('styles')
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <link href="{{ mix('css/style.css') }}" rel="stylesheet" />
 @endsection
 
 @section('footerScripts')
-    <script src="{{ asset('js/filter.js') }}"></script>
+    <script src="{{ mix('js/filter.js') }}"></script>
 @endsection
 
 @section('content')
