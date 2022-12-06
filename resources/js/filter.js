@@ -1,5 +1,3 @@
-console.log("loaded");
-
 var filterButtons = document.getElementsByClassName("filterButton");
 
 var filterStyles = function () {
