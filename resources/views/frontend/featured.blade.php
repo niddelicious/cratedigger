@@ -33,9 +33,8 @@
         @endif
         @if ($featured->mp3Filename)
             <div class="episodeInfo featured">Download:</div>
-            <div class="button right mp3"><a
-                    href="{{ asset('files/' . rawurlencode($featured->mp3Filename) . '.mp3') }}" download><i
-                        class="fa-solid fa-podcast"></i> MP3</a></div>
+            <div class="button right mp3"><a href="{{ asset('mp3/' . rawurlencode($featured->mp3Filename) . '.mp3') }}"
+                    download><i class="fa-solid fa-podcast"></i> MP3</a></div>
         @endif
     </div>
 </div>

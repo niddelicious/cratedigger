@@ -62,7 +62,7 @@
                     @if ($episode->mp3Filename)
                         <div class="episodeInfo">Download:</div>
                         <div class="button right mp3"><a
-                                href="{{ asset('files/' . rawurlencode($episode->mp3Filename) . '.mp3') }}" download><i
+                                href="{{ asset('mp3/' . rawurlencode($episode->mp3Filename) . '.mp3') }}" download><i
                                     class="fa-solid fa-podcast"></i> MP3</a></div>
                     @endif
                 </div>
