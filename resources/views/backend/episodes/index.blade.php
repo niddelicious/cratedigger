@@ -31,13 +31,11 @@
                     <table class="table table-bordered table-striped align-middle">
                         <thead>
                             <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Data</th>
-                                <th scope="col">Thumbnail</th>
-                                <th scope="col">Video IDs</th>
-                                <th scope="col">MP3 filename</th>
+                                <th scope="col" class="col-1">Id</th>
+                                <th scope="col" class="col-8">Data</th>
+                                <th scope="col" class="col-2">Thumbnail</th>
 
-                                <th scope="col">Action</th>
+                                <th scope="col" class="col-1">Action</th>
                             </tr>
                         </thead>
                         @foreach ($episodes as $episode)
@@ -45,34 +43,31 @@
                                 <th scope="row">{{ $episode->id }}</th>
                                 <td>
                                     <ul>
-                                        <li><em>title:</em> {{ $episode->title }}</li>
-                                        <li><em>date:</em> {{ $episode->date }}</li>
-                                        <li><em>style:</em> {{ $episode->style }}</li>
-                                        <li><em>genre:</em> {{ $episode->genre }}</li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    <img src="/images/{{ $episode->imageFilename }}.jpg" class=""
-                                        alt="Cover art for id {{ $episode->id }}" />
-                                </td>
-                                <td>
-                                    <ul>
+                                        <li><em>Title:</em> {{ $episode->title }}</li>
+                                        <li><em>Date:</em> {{ $episode->date }}</li>
+                                        <li><em>Style:</em> {{ $episode->style }}</li>
+                                        <li><em>Genre:</em> {{ $episode->genre }}</li>
+                                        <li><em>Filename:</em> {{ $episode->mp3Filename }}</li>
                                         @if ($episode->youtubeId)
-                                            <li><i class="fa-brands fa-youtube"></i> {{ $episode->youtubeId }}</li>
+                                            <li><i class="fa-brands fa-youtube"></i>: {{ $episode->youtubeId }}</li>
                                         @endif
                                         @if ($episode->twitchId)
-                                            <li><i class="fa-brands fa-twitch"></i> {{ $episode->twitchId }}
+                                            <li><i class="fa-brands fa-twitch"></i>: {{ $episode->twitchId }}
                                                 @if ($episode->twitchSafe == true)
                                                     <i class="fa-solid fa-shield-heart"></i>
                                                 @endif
                                             </li>
                                         @endif
                                         @if ($episode->redditId)
-                                            <li><i class="fa-brands fa-reddit"></i> {{ $episode->redditId }}</li>
+                                            <li><i class="fa-brands fa-reddit"></i>: {{ $episode->redditId }}</li>
                                         @endif
                                     </ul>
+
                                 </td>
-                                <td>{{ $episode->mp3Filename }}</td>
+                                <td>
+                                    <img src="/images/{{ $episode->imageFilename }}.jpg" class=""
+                                        alt="Cover art for id {{ $episode->id }}" />
+                                </td>
                                 <td>
                                     <form action="{{ route('episodes.destroy', $episode->id) }}" method="POST">
 
