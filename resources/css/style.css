@@ -102,6 +102,11 @@ button {
     border-radius: .6em;
 }
 
+.thumbnail--backend {
+    width: 64px;
+    border-radius: 0;
+}
+
 .button {
     text-decoration: none;
     color: #fafafa;
