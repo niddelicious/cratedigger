@@ -12,7 +12,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
@@ -34,11 +34,8 @@
                             <th>Genre</th>
                             <th>Style</th>
                             <th>Date</th>
-                            <th>Image filename</th>
-                            <th>YouTube ID</th>
-                            <th>Twitch ID</th>
-                            <th>Twitch-safe</th>
-                            <th>Reddit ID</th>
+                            <th>Thumbnail</th>
+                            <th>Video IDs</th>
                             <th>MP3 filename</th>
 
                             <th>Action</th>
@@ -49,11 +46,28 @@
                                 <td>{{ $episode->genre }}</td>
                                 <td>{{ $episode->style }}</td>
                                 <td>{{ $episode->date }}</td>
-                                <td>{{ $episode->imageFilename }}</td>
-                                <td>{{ $episode->youtubeId }}</td>
-                                <td>{{ $episode->twitchId }}</td>
-                                <td>{{ $episode->twitchSafe }}</td>
-                                <td>{{ $episode->redditId }}</td>
+                                <td>
+                                    <img src="/images/{{ $episode->imageFilename }}.jpg"
+                                        class="thumbnail thumbnail--backend"
+                                        alt="Cover art for id {{ $episode->id }}" />
+                                </td>
+                                <td>
+                                    <ul>
+                                        @if ($episode->youtubeId)
+                                            <li><i class="fa-brands fa-youtube"></i> {{ $episode->youtubeId }}</li>
+                                        @endif
+                                        @if ($episode->twitchId)
+                                            <li><i class="fa-brands fa-twitch"></i> {{ $episode->twitchId }}
+                                                @if ($episode->twitchSafe == true)
+                                                    <i class="fa-solid fa-shield-heart"></i>
+                                                @endif
+                                            </li>
+                                        @endif
+                                        @if ($episode->redditId)
+                                            <li><i class="fa-brands fa-reddit"></i> {{ $episode->redditId }}</li>
+                                        @endif
+                                    </ul>
+                                </td>
                                 <td>{{ $episode->mp3Filename }}</td>
                                 <td>
                                     <form action="{{ route('episodes.destroy', $episode->id) }}" method="POST">
