@@ -28,27 +28,31 @@
                         </div>
                     @endif
 
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Title</th>
-                            <th>Genre</th>
-                            <th>Style</th>
-                            <th>Date</th>
-                            <th>Thumbnail</th>
-                            <th>Video IDs</th>
-                            <th>MP3 filename</th>
+                    <table class="table table-bordered table-striped align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Thumbnail</th>
+                                <th scope="col">Video IDs</th>
+                                <th scope="col">MP3 filename</th>
 
-                            <th>Action</th>
-                        </tr>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
                         @foreach ($episodes as $episode)
                             <tr>
-                                <td>{{ $episode->title }}</td>
-                                <td>{{ $episode->genre }}</td>
-                                <td>{{ $episode->style }}</td>
-                                <td>{{ $episode->date }}</td>
+                                <th scope="row">{{ $episode->id }}</th>
                                 <td>
-                                    <img src="/images/{{ $episode->imageFilename }}.jpg"
-                                        class="thumbnail thumbnail--backend"
+                                    <ul>
+                                        <li><em>title:</em> {{ $episode->title }}</li>
+                                        <li><em>date:</em> {{ $episode->date }}</li>
+                                        <li><em>style:</em> {{ $episode->style }}</li>
+                                        <li><em>genre:</em> {{ $episode->genre }}</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <img src="/images/{{ $episode->imageFilename }}.jpg" class=""
                                         alt="Cover art for id {{ $episode->id }}" />
                                 </td>
                                 <td>
