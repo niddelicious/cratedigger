@@ -22,7 +22,7 @@ class EpisodesController extends Controller
      */
     public function index()
     {
-        $episodes = Episode::orderBy('date', 'DESC')->get();
+        $episodes = Episode::orderBy('date', 'DESC')->orderBy('id', 'DESC')->get();
 
         return view('backend.episodes.index', compact('episodes'));
     }
