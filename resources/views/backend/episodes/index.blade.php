@@ -65,7 +65,7 @@
 
                                 </td>
                                 <td>
-                                    <img src="/images/{{ $episode->imageFilename }}.jpg" class=""
+                                    <img src="/coverart/{{ $episode->imageFilename }}.jpg" class=""
                                         alt="Cover art for id {{ $episode->id }}" />
                                 </td>
                                 <td>
