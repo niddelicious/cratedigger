@@ -30,7 +30,7 @@
         @foreach ($episodes as $episode)
             <div class="episode flex" data-style="{{ strtolower($episode->style) }}">
                 <div class="image">
-                    <img src="/images/{{ $episode->imageFilename }}.jpg" class="thumbnail"
+                    <img src="/coverart/{{ $episode->imageFilename }}.jpg" class="thumbnail"
                         alt="Cover art for {{ $episode->title }}" />
                 </div>
                 <div class="episodeData">

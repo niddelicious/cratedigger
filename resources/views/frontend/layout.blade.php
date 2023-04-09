@@ -5,7 +5,7 @@
     <title>niddelicious | nidde.nu | An archive of DJ streams</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;500;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0c46afc968.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
@@ -23,17 +23,22 @@
 
 <body>
     <div class="content">
-
-        <div class="header block">
-            @include('frontend.introduction')
+        <div class="header">
+            <div class="container">
+                @include('frontend.introduction')
+            </div>
         </div>
 
-        <div class="container block">
-            @yield('content')
+        <div class="main">
+            <div class="container">
+                @yield('content')
+            </div>
         </div>
 
-        <div class="footer block">
-            @include('frontend.footer')
+        <div class="footer">
+            <div class="container">
+                @include('frontend.footer')
+            </div>
         </div>
     </div>
 </body>

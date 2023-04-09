@@ -3,7 +3,7 @@
 </div>
 <div class="feature flex">
     <div class="image third featured">
-        <img src="/images/{{ $featured->imageFilename }}.jpg" alt="Cover art for {{ $featured->title }}" />
+        <img src="/coverart/{{ $featured->imageFilename }}.jpg" alt="Cover art for {{ $featured->title }}" />
     </div>
     <div class="episodeData third">
         <div class="episodeInfo featured">Title:</div>

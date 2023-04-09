@@ -1,7 +1,7 @@
 <div class="flex">
     <div class="title expanded">
         <h1>
-            <img class="script-logo" src="{{ asset('images/niddelicious-script-cropped.png') }}"
+            <img class="script-logo" src="{{ asset('images/niddelicious-script-cropped-blackish.png') }}"
                 alt="Script logo for niddelicious and nidde.nu" />
         </h1>
     </div>
@@ -46,5 +46,10 @@
                     class="fa-brands fa-instagram"></i> Instagram</a></div>
         <div class="button reddit"><a href="https://www.reddit.com/u/niddelicious"><i class="fa-brands fa-reddit"></i>
                 Reddit</a></div>
+        <div class="button"><a href="https://niddelicious.myspreadshop.se/"><i class="fas fa-tshirt"></i>
+                Merch EU</a></div>
+        <div class="button"><a href="https://niddelicious.myspreadshop.com/"><i class="fas fa-tshirt"></i>
+                Merch NA</a></div>
+
     </div>
 </div>
