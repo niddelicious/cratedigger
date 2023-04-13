@@ -25,11 +25,6 @@
                 <div class="button right youtube"><a href="https://youtu.be/{{ $featured->youtubeId }}"><i
                             class="fa-brands fa-youtube"></i> YouTube</a></div>
             @endif
-            @if ($featured->redditId)
-                <div class="button right reddit"><a
-                        href="https://www.reddit.com/rpan/r/RedditSets/{{ $featured->redditId }}"><i
-                            class="fa-brands fa-reddit"></i> Reddit</a></div>
-            @endif
         @endif
         @if ($featured->mp3Filename)
             <div class="episodeInfo featured">Download:</div>
