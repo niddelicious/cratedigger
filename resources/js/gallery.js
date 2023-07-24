@@ -8,7 +8,7 @@ var viewImage = function () {
     const image = viewer.querySelector('img');
     const newSrc = imgUrl.replace('sd-thumbs', 'sd-img').replace('.jpg', '.png');
     image.src = newSrc;
-    link.src = newSrc;
+    link.href = newSrc;
 };
 
 Array.from(galleryButtons).forEach(function (galleryButton) {

@@ -12,7 +12,7 @@
                     <h3> {{ $messages->header }}</h3>
                 @endif
                 <p>
-                    {{ $messages->message }}
+                    {!! html_entity_decode($messages->message) !!}
                 </p>
             </div>
         @endif
