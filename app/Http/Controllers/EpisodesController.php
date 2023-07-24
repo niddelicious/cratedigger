@@ -24,9 +24,7 @@ class EpisodesController extends Controller
     {
         $episodes = Episode::orderBy('date', 'DESC')->orderBy('id', 'DESC')->get();
 
-        $image_placeholder = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
-
-        return view('backend.episodes.index', compact('episodes', 'image_placeholder'));
+        return view('backend.episodes.index', compact('episodes'));
     }
 
     /**

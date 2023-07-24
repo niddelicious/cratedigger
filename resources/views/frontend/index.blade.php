@@ -4,16 +4,6 @@
     <link href="{{ mix('css/style.css') }}" rel="stylesheet" />
 @endsection
 
-@section('scripts')
-    <script src="https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
-    <script type="text/javascript">
-        ;(function() {
-            // Initialize
-            var bLazy = new Blazy();
-        })();
-    </script>
-@endsection
-
 @section('footerScripts')
     <script src="{{ mix('js/filter.js') }}"></script>
 @endsection
@@ -40,8 +30,8 @@
         @foreach ($episodes as $episode)
             <div class="episode flex" data-style="{{ strtolower($episode->style) }}">
                 <div class="image">
-                    <img src="{{ $image_placeholder }}" class="thumbnail b-lazy" data-src="/coverart/{{ $episode->imageFilename }}.jpg"
-                        alt="Cover art for {{ $episode->title }}" />
+                    <img src="/coverart/{{ $episode->imageFilename }}.jpg"
+                        alt="Cover art for {{ $episode->title }}" loading="lazy"/>
                 </div>
                 <div class="episodeData">
                     <div class="episodeInfo">Title:</div>

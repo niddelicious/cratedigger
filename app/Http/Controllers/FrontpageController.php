@@ -21,7 +21,6 @@ class FrontpageController extends Controller
         $episodes = Episode::orderBy('date', 'DESC')->orderBy('id', 'DESC')->get();
         $styles = Episode::groupBy('style')->orderBy('style', 'ASC')->pluck('style');
 
-        $image_placeholder = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
-        return view('frontend.index', compact(['messages', 'featured', 'episodes', 'styles', 'image_placeholder']));
+        return view('frontend.index', compact(['messages', 'featured', 'episodes', 'styles']));
     }
 }

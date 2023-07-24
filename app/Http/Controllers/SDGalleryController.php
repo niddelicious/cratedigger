@@ -24,8 +24,6 @@ class SDGalleryController extends Controller
 
         $image = str_replace(".jpg", ".png", str_replace("sd-thumbs/", "sd-img/", $thumbnails[array_rand($thumbnails)]));
 
-        $image_placeholder = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
-
-        return view('gallery.gallery', compact(['thumbnails', 'image', 'image_placeholder']));
+        return view('gallery.gallery', compact(['thumbnails', 'image']));
     }
 }

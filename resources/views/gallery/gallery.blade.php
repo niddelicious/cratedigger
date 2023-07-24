@@ -4,16 +4,6 @@
     <link href="{{ mix('css/style.css') }}" rel="stylesheet" />
 @endsection
 
-@section('scripts')
-    <script src="https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
-    <script type="text/javascript">
-        ;(function() {
-            // Initialize
-            var bLazy = new Blazy();
-        })();
-    </script>
-@endsection
-
 @section('footerScripts')
     <script src="{{ mix('js/gallery.js') }}"></script>
 @endsection
@@ -23,8 +13,8 @@
         <div id="viewer" class="viewer">
             <div class="viewer-item">
                 <div class="sd-image">
-                    <a href="{{ $image_placeholder }}" target="_blank">
-                        <img src="{{ $image }}" />
+                    <a href="{{ $image }}" target="_blank">
+                        <img src="{{ $image }}" loading="lazy" />
                     </a>
                 </div>
             </div>
@@ -34,7 +24,7 @@
             @foreach ($thumbnails as $thumbnail)
                 <div class="gallery-item">
                     <button class="galleryButton" data-image="{{ $thumbnail }}">
-                        <img src="{{ $image_placeholder }}" class="b-lazy" data-src="{{ $thumbnail }}"/>
+                        <img src="{{ $thumbnail }}" loading="lazy" />
                     </button>
                 </div>
             @endforeach

@@ -4,16 +4,6 @@
         <!-- Some JS and styles -->
     @endsection
 
-    @section('scripts')
-        <script src="https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
-        <script type="text/javascript">
-            ;(function() {
-            // Initialize
-            var bLazy = new Blazy();
-        })();
-        </script>
-    @endsection
-
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Episodes') }}
@@ -75,9 +65,8 @@
 
                                 </td>
                                 <td>
-                                    <img src="{{ $image_placeholder }}" class="b-lazy"
-                                        data-src="/coverart/{{ $episode->imageFilename }}.jpg" 
-                                        alt="Cover art for id {{ $episode->id }}" />
+                                    <img src="/coverart/{{ $episode->imageFilename }}.jpg" 
+                                        alt="Cover art for id {{ $episode->id }}"  loading="lazy"/>
                                 </td>
                                 <td>
                                     <form action="{{ route('episodes.destroy', $episode->id) }}" method="POST">
