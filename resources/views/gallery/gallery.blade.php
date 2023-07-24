@@ -9,7 +9,7 @@
     <script type="text/javascript">
         var bLazy = new Blazy({ 
             selector: 'img',
-            container: '#scrolling-container'
+            container: '#gallery-container'
         });
     </script>
 @endsection
@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-    <div class="gallery-container">
+    <div class="gallery-container" id="gallery-container">
         <div id="viewer" class="viewer">
             <div class="viewer-item">
                 <div class="sd-image">

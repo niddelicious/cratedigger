@@ -9,7 +9,7 @@
     <script type="text/javascript">
         var bLazy = new Blazy({ 
             selector: 'img',
-            container: '#scrolling-container'
+            container: '#main-content'
         });
     </script>
 @endsection
@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-    <div class="flex">
+    <div class="flex" id="main-content">
         @if ($featured)
             @include('frontend.featured')
         @endif
