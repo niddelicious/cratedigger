@@ -37,6 +37,11 @@ jobs:
       - name: Pull from repository
         run: |
           git pull
+      
+      # Install new packages
+      - name: NPM install
+        run: |
+          npm install
 
       # Compile JS and CSS
       - name: Compile JS and CSS
