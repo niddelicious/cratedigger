@@ -4,6 +4,16 @@
         <!-- Some JS and styles -->
     @endsection
 
+    @section('scripts')
+        <script src="https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+        <script type="text/javascript">
+            var bLazy = new Blazy({ 
+                selector: 'img',
+                container: '#scrolling-container'
+            });
+        </script>
+    @endsection
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Episodes') }}
@@ -65,7 +75,8 @@
 
                                 </td>
                                 <td>
-                                    <img src="/coverart/{{ $episode->imageFilename }}.jpg" class=""
+                                    <img src="/coverart/{{ $episode->imageFilename }}.jpg" class="b-lazy"
+                                        data-src="/coverart/{{ $episode->imageFilename }}.jpg" 
                                         alt="Cover art for id {{ $episode->id }}" />
                                 </td>
                                 <td>

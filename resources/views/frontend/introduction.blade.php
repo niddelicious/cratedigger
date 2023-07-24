@@ -38,7 +38,7 @@
     <div class="siteButtons third">
 
         <h3>Links:</h3>
-        <div class="button"><a href="https://nidde.nu/gallery"><i class="fa-solid fa-image"></i>
+        <div class="button"><a href="/gallery"><i class="fa-solid fa-image"></i>
                 Gallery</a></div>
         <div class="button twitch"><a href="https://twitch.tv/niddelicious"><i class="fa-brands fa-twitch"></i>
                 Twitch</a></div>

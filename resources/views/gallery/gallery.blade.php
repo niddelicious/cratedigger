@@ -4,6 +4,16 @@
     <link href="{{ mix('css/style.css') }}" rel="stylesheet" />
 @endsection
 
+@section('scripts')
+    <script src="https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+    <script type="text/javascript">
+        var bLazy = new Blazy({ 
+            selector: 'img',
+            container: '#scrolling-container'
+        });
+    </script>
+@endsection
+
 @section('footerScripts')
     <script src="{{ mix('js/gallery.js') }}"></script>
 @endsection
@@ -24,7 +34,7 @@
             @foreach ($thumbnails as $thumbnail)
                 <div class="gallery-item">
                     <button class="galleryButton" data-image="{{ $thumbnail }}">
-                        <img src="{{ $thumbnail }}" />
+                        <img src="{{ $thumbnail }}" class="b-lazy" data-src="{{ $thumbnail }}"/>
                     </button>
                 </div>
             @endforeach
