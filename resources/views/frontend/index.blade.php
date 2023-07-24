@@ -7,10 +7,10 @@
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
     <script type="text/javascript">
-        var bLazy = new Blazy({ 
-            selector: 'img',
-            container: '#main-content'
-        });
+        ;(function() {
+            // Initialize
+            var bLazy = new Blazy();
+        })();
     </script>
 @endsection
 
@@ -40,7 +40,7 @@
         @foreach ($episodes as $episode)
             <div class="episode flex" data-style="{{ strtolower($episode->style) }}">
                 <div class="image">
-                    <img src="/coverart/{{ $episode->imageFilename }}.jpg" class="thumbnail b-lazy" data-src="/coverart/{{ $episode->imageFilename }}.jpg"
+                    <img src="{{ $image_placeholder }}" class="thumbnail b-lazy" data-src="/coverart/{{ $episode->imageFilename }}.jpg"
                         alt="Cover art for {{ $episode->title }}" />
                 </div>
                 <div class="episodeData">

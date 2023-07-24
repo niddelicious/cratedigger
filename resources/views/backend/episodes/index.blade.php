@@ -7,10 +7,10 @@
     @section('scripts')
         <script src="https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
         <script type="text/javascript">
-            var bLazy = new Blazy({ 
-                selector: 'img',
-                container: '#main-content'
-            });
+            ;(function() {
+            // Initialize
+            var bLazy = new Blazy();
+        })();
         </script>
     @endsection
 
@@ -75,7 +75,7 @@
 
                                 </td>
                                 <td>
-                                    <img src="/coverart/{{ $episode->imageFilename }}.jpg" class="b-lazy"
+                                    <img src="{{ $image_placeholder }}" class="b-lazy"
                                         data-src="/coverart/{{ $episode->imageFilename }}.jpg" 
                                         alt="Cover art for id {{ $episode->id }}" />
                                 </td>

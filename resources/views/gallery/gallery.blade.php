@@ -7,10 +7,10 @@
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
     <script type="text/javascript">
-        var bLazy = new Blazy({ 
-            selector: 'img',
-            container: '#gallery-container'
-        });
+        ;(function() {
+            // Initialize
+            var bLazy = new Blazy();
+        })();
     </script>
 @endsection
 
@@ -23,7 +23,7 @@
         <div id="viewer" class="viewer">
             <div class="viewer-item">
                 <div class="sd-image">
-                    <a href="{{ $image }}" target="_blank">
+                    <a href="{{ $image_placeholder }}" target="_blank">
                         <img src="{{ $image }}" />
                     </a>
                 </div>
@@ -34,7 +34,7 @@
             @foreach ($thumbnails as $thumbnail)
                 <div class="gallery-item">
                     <button class="galleryButton" data-image="{{ $thumbnail }}">
-                        <img src="{{ $thumbnail }}" class="b-lazy" data-src="{{ $thumbnail }}"/>
+                        <img src="{{ $image_placeholder }}" class="b-lazy" data-src="{{ $thumbnail }}"/>
                     </button>
                 </div>
             @endforeach
