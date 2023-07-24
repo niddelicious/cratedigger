@@ -27,12 +27,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Sanity check
-      - name: Sanity check
-        run: |
-          rm ./github-action-ran.txt
-          touch ./github-action-is-running.txt
-
       # Pull from repository
       - name: Pull from repository
         run: |
@@ -53,8 +47,3 @@ jobs:
         run: |
           php artisan cache:clear
 
-      # Sanity check cleanup
-      - name: Sanity check cleanup
-        run: |
-          rm ./github-action-is-running.txt
-          touch ./github-action-ran.txt
