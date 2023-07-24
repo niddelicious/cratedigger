@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontpageController;
+use App\Http\Controllers\SDGalleryController;
 use App\Http\Controllers\EpisodesController;
 use App\Http\Controllers\MessagesController;
 
@@ -17,6 +18,7 @@ use App\Http\Controllers\MessagesController;
 */
 
 Route::get('/', [FrontpageController::class, 'index']);
+Route::get('/gallery', [SDGalleryController::class, 'index']);
 
 /*
 Route::get('/', function () {

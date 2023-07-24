@@ -1,7 +1,7 @@
-var filterButtons = document.getElementsByClassName("filterButton");
+var galleryButtons = document.getElementsByClassName("filterButton");
 
 var filterStyles = function () {
-    Array.from(filterButtons).forEach(function (filterButton) {
+    Array.from(galleryButtons).forEach(function (filterButton) {
         filterButton.classList.remove("activeFilter");
     });
 
@@ -22,6 +22,6 @@ var filterStyles = function () {
     });
 };
 
-Array.from(filterButtons).forEach(function (filterButton) {
+Array.from(galleryButtons).forEach(function (filterButton) {
     filterButton.addEventListener('click', filterStyles);
 });
