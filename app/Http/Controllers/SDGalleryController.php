@@ -22,10 +22,8 @@ class SDGalleryController extends Controller
             return str_replace("public/", "storage/", $thumbnail);
         }, $thumbnails);
 
-        $random_image = $thumbnails[array_rand($thumbnails)];
-
         $image = str_replace(".jpg", ".png", str_replace("sd-thumbs/", "sd-img/", $thumbnails[array_rand($thumbnails)]));
 
-        return view('gallery.gallery', compact(['thumbnails', 'image', 'random_image']));
+        return view('gallery.gallery', compact(['thumbnails', 'image']));
     }
 }
