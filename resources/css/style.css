@@ -99,6 +99,10 @@ button {
     padding: 1em;
 }
 
+.tight-container {
+    padding: 0.1em 1em;
+}
+
 .header {
     background-color: var(--color-whiteish);
     color: var(--color-blackish);
@@ -122,6 +126,10 @@ button {
 
 .footer {
     margin-top: 1rem;
+}
+
+.gallery-footer {
+    margin-top: 0.1rem;
 }
 
 .thumbnail {
@@ -343,14 +351,13 @@ div.twitchSafeRibbon {
 .gallery-container {
     display: flex;
     flex-direction: column;
+    height: calc(100svh - 100px);
 }
 
 .viewer {
     background-color: var(--color-blackish);
     width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 2;
+    flex: 1 0 auto;
 }
 
 .viewer-item {
@@ -370,7 +377,12 @@ div.twitchSafeRibbon {
     max-height: 1024px;
 }
 
-.gallery {}
+.gallery {
+    flex: 0 1 auto;
+    overflow-y: scroll;
+    border: solid var(--color-whiteish);
+    border-width: 2px 0px;
+}
 
 .gallery-thumbnails {
     display: flex;

@@ -24,13 +24,13 @@
 <body>
     <div class="content">
         <div class="main">
-            <div class="container">
+            <div class="container tight-container">
                 @yield('content')
             </div>
         </div>
 
-        <div class="footer">
-            <div class="container">
+        <div class="footer gallery-footer">
+            <div class="container tight-container">
                 @include('gallery.footer')
             </div>
         </div>
