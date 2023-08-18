@@ -14,7 +14,7 @@
             <div class="viewer-item">
                 <div class="sd-image">
                     <a href="{{ $image }}" target="_blank">
-                        <img src="{{ $image }}" loading="lazy" />
+                        <img src="{{ $lossy }}" loading="lazy" />
                     </a>
                 </div>
             </div>

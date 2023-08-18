@@ -6,9 +6,10 @@ var viewImage = function () {
     const viewer = document.querySelector('#viewer');
     const link = viewer.querySelector('a');
     const image = viewer.querySelector('img');
-    const newSrc = imgUrl.replace('sd-thumbs', 'sd-img').replace('.jpg', '.png');
-    image.src = newSrc;
-    link.href = newSrc;
+    const lossy = imgUrl.replace('sd-thumbs', 'sd-lossy');
+    const orig = imgUrl.replace('sd-thumbs', 'sd-img').replace('.jpg', '.png');
+    image.src = lossy;
+    link.href = orig;
 };
 
 Array.from(galleryButtons).forEach(function (galleryButton) {

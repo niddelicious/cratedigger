@@ -23,7 +23,8 @@ class SDGalleryController extends Controller
         }, $thumbnails);
 
         $image = str_replace(".jpg", ".png", str_replace("sd-thumbs/", "sd-img/", $thumbnails[array_rand($thumbnails)]));
+        $lossy = str_replace("sd-thumbs/", "sd-lossy/", $thumbnails[array_rand($thumbnails)]);
 
-        return view('gallery.gallery', compact(['thumbnails', 'image']));
+        return view('gallery.gallery', compact(['thumbnails', 'image', 'lossy']));
     }
 }
