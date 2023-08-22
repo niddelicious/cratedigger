@@ -18,6 +18,7 @@ body {
     font-weight: 700;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 
@@ -162,7 +163,6 @@ a:visited {
     display: block;
     text-decoration: none;
     color: var(--color-whiteish);
-    width: 100%;
 }
 
 .title {
@@ -355,34 +355,116 @@ div.twitchSafeRibbon {
 }
 
 .viewer {
-    background-color: var(--color-blackish);
-    width: 100%;
-    flex: 1 0 auto;
-}
-
-.viewer-item {
+    flex: 2 0 content;
+    max-height: 50svh;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
-.sd-image {
-    text-align: center;
-}
-
-.sd-image img {
-    width: 100%;
-    height: 100%;
-    max-width: 1024px;
-    max-height: 1024px;
-}
 
 .gallery {
-    flex: 0 1 auto;
+    flex: 1 1 content;
     overflow-y: scroll;
+    position: relative;
     border: solid var(--color-whiteish);
     border-width: 2px 0px;
 }
+
+.viewer-image {
+    flex: 1;
+    max-height: calc(100% - 40px);
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    object-fit: contain;
+    position: relative;
+}
+
+.viewer-image img {
+    flex-shrink: 1;
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    object-fit: contain;
+}
+
+.image-buttons {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+
+.image-buttons button {
+    margin: 0 0 0 0.5em;
+    border: 0;
+    background: none;
+    font-size: x-large;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.sd-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-blackish);
+    opacity: 0.8;
+    display: none;
+    flex-direction: column;
+    font-size: medium;
+    font-weight: 500;
+    gap: .5em;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.parameter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.label {
+    min-width: 100px;
+}
+
+.prompt {
+    width: auto;
+}
+
+.settings {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: .2em;
+    justify-content: space-between;
+}
+
+.settings-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.viewer-buttons {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 40px;
+    width: 100%;
+}
+
+.viewer-button {
+    flex: 1 1 auto;
+}
+
 
 .gallery-thumbnails {
     display: flex;
@@ -401,12 +483,6 @@ div.twitchSafeRibbon {
     border: none;
     max-width: 128px;
     max-height: 128px;
-}
-
-.sd-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: .5em;
 }
 
 @media (max-width: 600px) {
@@ -440,6 +516,15 @@ div.twitchSafeRibbon {
         max-width: 64px;
         max-height: 64px;
     }
+
+    .sd-info {
+        position: fixed;
+        font-size: small;
+    }
+
+    .settings {
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -461,6 +546,15 @@ div.twitchSafeRibbon {
         max-width: 96px;
         max-height: 96px;
     }
+
+    .sd-info {
+        position: fixed;
+        font-size: small;
+    }
+
+    .settings {
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 900px) and (max-width: 4000px) {
@@ -475,5 +569,10 @@ div.twitchSafeRibbon {
     .third {
         flex-basis: 30%;
         min-width: 260px;
+    }
+
+    .sd-info {
+        position: absolute;
+        font-size: medium;
     }
 }
