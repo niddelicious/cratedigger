@@ -31,6 +31,11 @@ var toggleInfo = function (force) {
 
 var viewImageInfo = function () {
     toggleInfo('show');
+    document.querySelector('#prompt').textContent = "fetching...";
+    document.querySelector('#negative_prompt').textContent = "fetching...";
+    document.querySelector('#steps').textContent = "fetching...";
+    document.querySelector('#model').textContent = "fetching...";
+    document.querySelector('#seed').textContent = "fetching...";
     imgUrl = this.getAttribute("data-image");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', imgUrl, true);
