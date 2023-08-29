@@ -2,7 +2,7 @@
 
 
 @section('meta')
-    <meta property="og:title" content="niddelicious | nidde.nu | Generated image {{ $image }}" />
+    <meta property="og:title" content="niddelicious | nidde.nu | Generated image {{ $image_id }}" />
     <meta property="og:description"
         content="Image generated during a niddelicious live stream over on Twitch: https://twitch.tv/niddelicious" />
     <meta property="og:image" content="{{ url($lossy) }}" />

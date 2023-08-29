@@ -20,14 +20,10 @@ class SDGalleryController extends Controller
         $thumbnails = Storage::files($directory);
         $thumbnails = array_map(fn($thumbnail) => str_replace("public/", "storage/", $thumbnail), $thumbnails);
 
-        if ($image_id !== null) {
-            $image = str_replace(".jpg", ".png", str_replace("sd-thumbs/", "sd-img/", "storage/sd-thumbs/{$image_id}.jpg"));
-            $lossy = str_replace("sd-thumbs/", "sd-lossy/", "storage/sd-thumbs/{$image_id}.jpg");
-        } else {
-            $image_id = $thumbnails[array_rand($thumbnails)];
-            $image = str_replace(".jpg", ".png", str_replace("sd-thumbs/", "sd-img/", $image_id));
-            $lossy = str_replace("sd-thumbs/", "sd-lossy/", $image_id);
-        }
+        $image_id = $image_id ?: str_replace(".jpg", "", basename($thumbnails[array_rand($thumbnails)]));
+
+        $image = "storage/sd-img/{$image_id}.png";
+        $lossy = "storage/sd-lossy/{$image_id}.jpg";
 
         return view('gallery.gallery', compact('thumbnails', 'image', 'lossy', 'image_id'));
     }
