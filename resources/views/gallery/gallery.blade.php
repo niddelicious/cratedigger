@@ -23,6 +23,8 @@
         <div id="viewer" class="viewer">
             <div class="viewer-image">
                 <img src="/{{ $lossy }}" loading="lazy" id="image" data-image="{{ $lossy }}" />
+                <div class="image-prompt" id="image-prompt">
+                </div>
                 <div class="image-buttons">
                     <button class="image-button" id="infoButton" data-image="{{ $image }}"><i
                             class="fa-solid fa-circle-info"></i></button>
