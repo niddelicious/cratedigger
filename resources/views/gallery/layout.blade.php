@@ -19,6 +19,7 @@
 
     @yield('styles')
     @yield('scripts')
+    @yield('meta')
 </head>
 
 <body>

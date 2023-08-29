@@ -7,26 +7,28 @@ use Illuminate\Support\Facades\Storage;
 
 class SDGalleryController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($image_id = null)
     {
         $directory = "public/sd-thumbs";
 
         $thumbnails = Storage::files($directory);
-        $thumbnails = array_map(function($thumbnail) {
-            return str_replace("public/", "storage/", $thumbnail);
-        }, $thumbnails);
+        $thumbnails = array_map(fn($thumbnail) => str_replace("public/", "storage/", $thumbnail), $thumbnails);
 
-        $random_image = $thumbnails[array_rand($thumbnails)];
+        if ($image_id !== null) {
+            $image = str_replace(".jpg", ".png", str_replace("sd-thumbs/", "sd-img/", "storage/sd-thumbs/{$image_id}.jpg"));
+            $lossy = str_replace("sd-thumbs/", "sd-lossy/", "storage/sd-thumbs/{$image_id}.jpg");
+        } else {
+            $image_id = $thumbnails[array_rand($thumbnails)];
+            $image = str_replace(".jpg", ".png", str_replace("sd-thumbs/", "sd-img/", $image_id));
+            $lossy = str_replace("sd-thumbs/", "sd-lossy/", $image_id);
+        }
 
-        $image = str_replace(".jpg", ".png", str_replace("sd-thumbs/", "sd-img/", $random_image));
-        $lossy = str_replace("sd-thumbs/", "sd-lossy/", $random_image);
-
-        return view('gallery.gallery', compact(['thumbnails', 'image', 'lossy']));
+        return view('gallery.gallery', compact('thumbnails', 'image', 'lossy', 'image_id'));
     }
 }

@@ -1,5 +1,15 @@
 @extends('gallery.layout')
 
+
+@section('meta')
+    <meta property="og:title" content="niddelicious | nidde.nu | Generated image {{ $image }}" />
+    <meta property="og:description"
+        content="Image generated during a niddelicious live stream over on Twitch: https://twitch.tv/niddelicious" />
+    <meta property="og:image" content="{{ url($lossy) }}" />
+    <meta property="og:url" content="{{ url('/gallery/' . $image_id) }}" />
+    <meta property="og:type" content="website" />
+@endsection
+
 @section('styles')
     <link href="{{ mix('css/style.css') }}" rel="stylesheet" />
 @endsection
@@ -12,7 +22,7 @@
     <div class="gallery-container" id="gallery-container">
         <div id="viewer" class="viewer">
             <div class="viewer-image">
-                <img src="{{ $lossy }}" loading="lazy" id="image" data-image="{{ $lossy }}" />
+                <img src="/{{ $lossy }}" loading="lazy" id="image" data-image="{{ $lossy }}" />
                 <div class="image-buttons">
                     <button class="image-button" id="infoButton" data-image="{{ $image }}"><i
                             class="fa-solid fa-circle-info"></i></button>
@@ -50,7 +60,7 @@
                 @foreach ($thumbnails as $thumbnail)
                     <div class="gallery-item">
                         <button class="galleryButton" data-image="{{ $thumbnail }}">
-                            <img src="{{ $thumbnail }}" loading="lazy" />
+                            <img src="/{{ $thumbnail }}" loading="lazy" />
                         </button>
                     </div>
                 @endforeach

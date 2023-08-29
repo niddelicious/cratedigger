@@ -7,11 +7,13 @@ var viewImage = function () {
     const download = viewer.querySelector('#downloadButton');
     const info = viewer.querySelector('#infoButton');
     const image = viewer.querySelector('#image');
-    const lossy = imgUrl.replace('sd-thumbs', 'sd-lossy');
-    const orig = imgUrl.replace('sd-thumbs', 'sd-img').replace('.jpg', '.png');
-    image.src = lossy;
+    var lossy = imgUrl.replace('sd-thumbs', 'sd-lossy');
+    var orig = imgUrl.replace('sd-thumbs', 'sd-img').replace('.jpg', '.png');
+    var image_id = imgUrl.replace('storage/sd-thumbs/', '').replace('.jpg', '');
+    image.src = '/' + lossy;
     download.setAttribute('data-link', orig);
     info.setAttribute('data-image', orig);
+    history.pushState(null, null, '/gallery/' + image_id);
 };
 
 Array.from(galleryButtons).forEach(function (galleryButton) {
@@ -36,7 +38,7 @@ var viewImageInfo = function () {
     document.querySelector('#steps').textContent = "fetching...";
     document.querySelector('#model').textContent = "fetching...";
     document.querySelector('#seed').textContent = "fetching...";
-    imgUrl = this.getAttribute("data-image");
+    imgUrl = '/' + this.getAttribute("data-image");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', imgUrl, true);
     xhr.responseType = 'arraybuffer';
@@ -238,7 +240,7 @@ var imageInfo = document.getElementById('sd-info');
 
 infoButton.addEventListener('click', viewImageInfo);
 downloadButton.addEventListener('click', function () {
-    var url = downloadButton.getAttribute('data-link');
+    var url = '/' + downloadButton.getAttribute('data-link');
     window.open(url, '_blank');
     window.focus();
 });

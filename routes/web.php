@@ -18,7 +18,7 @@ use App\Http\Controllers\MessagesController;
 */
 
 Route::get('/', [FrontpageController::class, 'index']);
-Route::get('/gallery', [SDGalleryController::class, 'index']);
+Route::get('/gallery/{image_id?}', [SDGalleryController::class, 'index']);
 
 /*
 Route::get('/', function () {
