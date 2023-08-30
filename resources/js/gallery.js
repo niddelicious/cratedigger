@@ -33,6 +33,7 @@ var toggleInfo = function (force) {
 };
 
 var fetchImageInfo = function (imgUrl) {
+    document.querySelector('#image-prompt').textContent = "fetching...";
     document.querySelector('#prompt').textContent = "fetching...";
     document.querySelector('#negative_prompt').textContent = "fetching...";
     document.querySelector('#steps').textContent = "fetching...";
@@ -85,6 +86,7 @@ var fetchImageInfo = function (imgUrl) {
 
 var viewImageInfo = function () {
     toggleInfo('show');
+    document.querySelector('#image-prompt').textContent = "fetching...";
     document.querySelector('#prompt').textContent = "fetching...";
     document.querySelector('#negative_prompt').textContent = "fetching...";
     document.querySelector('#steps').textContent = "fetching...";
