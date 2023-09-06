@@ -58,15 +58,20 @@
             </div>
         </div>
         <div class="gallery">
-            <div class="gallery-thumbnails">
-                @foreach ($thumbnails as $thumbnail)
-                    <div class="gallery-item">
-                        <button class="galleryButton" data-image="{{ $thumbnail }}">
-                            <img src="/{{ $thumbnail }}" loading="lazy" />
-                        </button>
-                    </div>
-                @endforeach
-            </div>
+            @foreach ($thumbnails as $date => $group)
+                <div class="gallery-group">
+                    {{ $date }}
+                </div>
+                <div class="gallery-thumbnails">
+                    @foreach ($group as $thumbnail)
+                        <div class="gallery-item">
+                            <button class="galleryButton" data-image="{{ $thumbnail }}">
+                                <img src="/{{ $thumbnail }}" loading="lazy" />
+                            </button>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection

@@ -477,11 +477,17 @@ div.twitchSafeRibbon {
     flex: 1 1 auto;
 }
 
+.gallery-group {
+    max-width: 90%;
+    margin: 0.5em 0 0.2em;
+    padding: 0.2em 0.5em;
+    border-bottom: 1px solid var(--color-whiteish);
+}
 
 .gallery-thumbnails {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
     gap: .2em;
 }
 
