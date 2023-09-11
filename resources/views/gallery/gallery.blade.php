@@ -31,28 +31,28 @@
                     <button class="image-button" id="downloadButton" data-link="{{ $image }}"><i
                             class="fa-solid fa-download"></i></button>
                 </div>
-                <div class="sd-info" id="sd-info">
-                    <div class="parameter">
-                        <div class="label">Prompt:</div>
-                        <div class="prompt" id="prompt"></div>
+            </div>
+            <div class="sd-info" id="sd-info">
+                <div class="parameter">
+                    <div class="label">Prompt:</div>
+                    <div class="prompt" id="prompt"></div>
+                </div>
+                <div class="parameter">
+                    <div class="label">Negative prompt:</div>
+                    <div class="prompt" id="negative_prompt"></div>
+                </div>
+                <div class="settings">
+                    <div class="settings-item">
+                        <div class="label">Model:</div>
+                        <div class="setting" id="model"></div>
                     </div>
-                    <div class="parameter">
-                        <div class="label">Negative prompt:</div>
-                        <div class="prompt" id="negative_prompt"></div>
+                    <div class="settings-item">
+                        <div class="label">Seed:</div>
+                        <div class="setting" id="seed"></div>
                     </div>
-                    <div class="settings">
-                        <div class="settings-item">
-                            <div class="label">Model:</div>
-                            <div class="setting" id="model"></div>
-                        </div>
-                        <div class="settings-item">
-                            <div class="label">Seed:</div>
-                            <div class="setting" id="seed"></div>
-                        </div>
-                        <div class="settings-item">
-                            <div class="label">Steps:</div>
-                            <div class="setting" id="steps"></div>
-                        </div>
+                    <div class="settings-item">
+                        <div class="label">Steps:</div>
+                        <div class="setting" id="steps"></div>
                     </div>
                 </div>
             </div>
