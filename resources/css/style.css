@@ -135,7 +135,6 @@ button {
 
 .thumbnail {
     width: 128px;
-    border-radius: .6em;
 }
 
 .thumbnail--backend {
@@ -317,7 +316,6 @@ div.twitchSafeRibbon {
 
 .featured img {
     max-width: 256px;
-    border-radius: 1em;
 }
 
 .tag {
