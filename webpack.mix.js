@@ -1,18 +1,25 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss');
 
 /*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel applications. By default, we are compiling the CSS
- | file for the application as well as bundling up all the JS files.
- |
- */
+|--------------------------------------------------------------------------
+| Mix Asset Management
+|--------------------------------------------------------------------------
+|
+| Mix provides a clean, fluent API for defining some Webpack build steps
+| for your Laravel applications. By default, we are compiling the CSS
+| file for the application as well as bundling up all the JS files.
+|
+*/
 
-mix.js('resources/js/app.js', 'public/js').js('resources/js/filter.js', 'public/js').js('resources/js/gallery.js', 'public/js').css('resources/css/crateButton.css', 'public/css').postCss('resources/css/style.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-]).version();
+mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/filter.js', 'public/js')
+    .js('resources/js/gallery.js', 'public/js')
+    .css('resources/css/crateButton.css', 'public/css')
+    .postCss('resources/css/style.css', 'public/css', [
+        require('postcss-import'),
+        require("tailwindcss"),
+        tailwindcss('./tailwind.config.js'),
+        require('autoprefixer'),
+    ])
+    .version();
