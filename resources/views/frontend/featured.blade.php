@@ -16,20 +16,16 @@
     </div>
     <div class="buttons third">
         @if ($featured->twitchId || $featured->youtubeId || $featured->redditId)
-            <div class="episodeInfo featured">View:</div>
             @if ($featured->twitchId && !$featured->twitchTooOld)
                 <div class="button right twitch"><a href="https://twitch.tv/videos/{{ $featured->twitchId }}"><i
                             class="fa-brands fa-twitch"></i> Twitch</a></div>
             @endif
             @if ($featured->youtubeId)
-                <div class="button right youtube"><a href="https://youtu.be/{{ $featured->youtubeId }}"><i
-                            class="fa-brands fa-youtube"></i> YouTube</a></div>
+                <x-crate-button link="https://youtu.be/{{ $featured->youtubeId }}" icon="fa-brands fa-youtube" text="YouTube" color="youtube"/>
             @endif
         @endif
         @if ($featured->mp3Filename)
-            <div class="episodeInfo featured">Download:</div>
-            <div class="button right mp3"><a href="{{ asset('mp3/' . rawurlencode($featured->mp3Filename) . '.mp3') }}"
-                    download><i class="fa-solid fa-podcast"></i> MP3</a></div>
+            <x-crate-button link="{{ asset('mp3/' . rawurlencode($featured->mp3Filename) . '.mp3') }}" icon="fa-solid fa-podcast" text="MP3" color="blue"/>
         @endif
     </div>
 </div>

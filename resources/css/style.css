@@ -2,9 +2,21 @@
     --color-whiteish: #ececd4;
     --color-blackish: #232323;
     --color-orange: #ff8c00;
-    --color-twitch: #9146FF;
-    --color-youtube: #c4302b;
-    --color-instagram: black;
+    --color-orange-shadow: #804000;
+    --color-twitch: #6441A4;
+    --color-twitch-shadow: #392e5c;
+    --color-youtube: #ff0000;
+    --color-youtube-shadow: #800000;
+    --color-instagram: #ff0069;
+    --color-instagram-shadow: #7f0040;
+    --color-discord: #5865f2;
+    --color-discord-shadow: #202080;
+    --color-merch: #232323;
+    --color-merch-shadow: #101010;
+    --color-green: #408020;
+    --color-green-shadow: #204010;
+    --color-blue: #80c0ff;
+    --color-blue-shadow: #406080;
     --color-reddit: #FF5700;
     --color-mp3: #393e41;
 
@@ -13,7 +25,7 @@
 body {
     background-color: #232323;
     color: var(--color-whiteish);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 14pt;
     font-weight: 700;
     margin: 0;
@@ -176,9 +188,34 @@ a:visited {
     line-height: 1.2em;
 }
 
+.orange {
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+}
+
+.orange-shadow {
+    background-color: var(--color-orange-shadow);
+    border-color: var(--color-orange-shadow);
+}
+
+.merch {
+    background-color: var(--color-merch);
+    border-color: var(--color-merch);
+}
+
+.merch-shadow {
+    background-color: var(--color-merch-shadow);
+    border-color: var(--color-merch-shadow);
+}
+
 .twitch {
     background-color: var(--color-twitch);
     border-color: var(--color-twitch);
+}
+
+.twitch-shadow {
+    background-color: var(--color-twitch-shadow);
+    border-color: var(--color-twitch-shadow);
 }
 
 .youtube {
@@ -186,9 +223,49 @@ a:visited {
     border-color: var(--color-youtube);
 }
 
+.youtube-shadow {
+    background-color: var(--color-youtube-shadow);
+    border-color: var(--color-youtube-shadow);
+}
+
 .instagram {
-    background-color: black;
-    border-color: var(--color-whiteish);
+    background-color: var(--color-instagram);
+    border-color: var(--color-instagram);
+}
+
+.instagram-shadow{
+    background-color: var(--color-instagram-shadow);
+    border-color: var(--color-instagram-shadow);
+}
+
+.discord {
+    background-color: var(--color-discord);
+    border-color: var(--color-discord);
+}
+
+.discord-shadow{
+    background-color: var(--color-discord-shadow);
+    border-color: var(--color-discord-shadow);
+}
+
+.green {
+    background-color: var(--color-green);
+    border-color: var(--color-green);
+}
+
+.green-shadow{
+    background-color: var(--color-green-shadow);
+    border-color: var(--color-green-shadow);
+}
+
+.blue {
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
+}
+
+.blue-shadow{
+    background-color: var(--color-blue-shadow);
+    border-color: var(--color-blue-shadow);
 }
 
 .reddit {

@@ -1,0 +1,39 @@
+.crate-button-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #333; /* Background color for the wrapper */
+  padding: 0px; /* Optional padding around the wrapper */
+  border-radius: 16px 8px 8px 16px; /* Optional rounded corners for wrapper */
+  margin-bottom: 12px;
+}
+
+.crate-button-outer {
+  width: 64px; /* Adjust width as needed */
+  height: 70px; /* Adjust height as needed */
+  border: 5px solid black; /* Black border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.crate-button-inner {
+  width: 100%;
+  height: calc(100% - 10px); /* Fills the top, leaving a 10px gap at the bottom */
+  border-radius: 4px; /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: white; /* Icon color */
+  font-size: 24px; /* Adjust icon size as needed */
+  font-weight: 900;
+}
+
+.crate-button-text {
+  margin-left: 10px; /* Space between the box and the text */
+  color: white; /* Text color */
+  font-size: 24px; /* Adjust text size as needed */
+  font-weight: 600;
+  /* text-transform: uppercase; */
+}

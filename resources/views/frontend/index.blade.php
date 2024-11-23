@@ -2,6 +2,7 @@
 
 @section('styles')
     <link href="{{ mix('css/style.css') }}" rel="stylesheet" />
+    <link href="{{ mix('css/crateButton.css') }}" rel="stylesheet" />
 @endsection
 
 @section('footerScripts')
@@ -44,21 +45,16 @@
                 </div>
                 <div class="buttons">
                     @if ($episode->twitchId || $episode->youtubeId || $episode->redditId)
-                        <div class="episodeInfo">View:</div>
                         @if ($episode->twitchId && !$episode->twitchTooOld)
                             <div class="button right twitch"><a href="https://twitch.tv/videos/{{ $episode->twitchId }}"><i
                                         class="fa-brands fa-twitch"></i> Twitch</a></div>
                         @endif
                         @if ($episode->youtubeId)
-                            <div class="button right youtube"><a href="https://youtu.be/{{ $episode->youtubeId }}"><i
-                                        class="fa-brands fa-youtube"></i> YouTube</a></div>
+                            <x-crate-button link="https://youtu.be/{{ $episode->youtubeId }}" icon="fa-brands fa-youtube" text="YouTube" color="youtube"/>
                         @endif
                     @endif
                     @if ($episode->mp3Filename)
-                        <div class="episodeInfo">Download:</div>
-                        <div class="button right mp3"><a
-                                href="{{ asset('mp3/' . rawurlencode($episode->mp3Filename) . '.mp3') }}" download><i
-                                    class="fa-solid fa-podcast"></i> MP3</a></div>
+                        <x-crate-button link="{{ asset('mp3/' . rawurlencode($episode->mp3Filename) . '.mp3') }}" icon="fa-solid fa-podcast" text="MP3" color="blue"/>
                     @endif
                 </div>
             </div>

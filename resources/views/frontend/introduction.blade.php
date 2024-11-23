@@ -38,20 +38,12 @@
     <div class="siteButtons third">
 
         <h3>Links:</h3>
-        <div class="button"><a href="/gallery"><i class="fa-solid fa-image"></i>
-                Gallery</a></div>
-        <div class="button twitch"><a href="https://twitch.tv/niddelicious"><i class="fa-brands fa-twitch"></i>
-                Twitch</a></div>
-        <div class="button youtube"><a href="https://www.youtube.com/@niddelicious"><i class="fa-brands fa-youtube"></i>
-                YouTube</a></div>
-        <div class="button instagram"><a href="https://instagram.com/niddelicious"><i
-                    class="fa-brands fa-instagram"></i> Instagram</a></div>
-        <div class="button reddit"><a href="https://www.reddit.com/u/niddelicious"><i class="fa-brands fa-reddit"></i>
-                Reddit</a></div>
-        <div class="button"><a href="https://niddelicious.myspreadshop.se/"><i class="fas fa-tshirt"></i>
-                Merch EU</a></div>
-        <div class="button"><a href="https://niddelicious.myspreadshop.com/"><i class="fas fa-tshirt"></i>
-                Merch NA</a></div>
-
+        <x-crate-button link="/gallery" icon="fa-solid fa-image" text="Gallery" color="orange"/>
+        <x-crate-button link="https://twitch.tv/niddelicious" icon="fa-brands fa-twitch" text="Twitch" color="twitch"/>
+        <x-crate-button link="https://www.youtube.com/@niddelicious" icon="fa-brands fa-youtube" text="YouTube" color="youtube"/>
+        <x-crate-button link="https://instagram.com/niddelicious" icon="fa-brands fa-instagram" text="Instagram" color="instagram"/>
+        <x-crate-button link="https://discord.gg/jXxtveja5F" icon="fa-brands fa-discord" text="Discord" color="discord"/>
+        <x-crate-button link="https://niddelicious.myspreadshop.se/" icon="fas fa-tshirt" text="Merch EU" color="green"/>
+        <x-crate-button link="https://niddelicious.myspreadshop.com/" icon="fas fa-tshirt" text="Merch US" color="green"/>
     </div>
 </div>
